@@ -1,0 +1,283 @@
+:root {
+    --pink-coast: #fce4ec;
+    --pink-dark: #f06292;
+    --accent: #ad1457;
+    --glass-white: rgba(255, 255, 255, 0.92);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(135deg, #fdf2f8 0%, #e0f2fe 100%);
+    background-attachment: fixed;
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND TEXTURE */
+body::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(240, 98, 146, 0.12) 1.5px, transparent 1.5px);
+    background-size: 30px 30px; z-index: -1;
+}
+
+/* HERO PHOTO GLOW */
+.main-photo-wrapper {
+    position: relative;
+    width: 200px; height: 200px;
+    margin: 0 auto 30px;
+}
+
+.photo-glow {
+    position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+    background: radial-gradient(circle, var(--pink-dark), transparent);
+    border-radius: 50%; filter: blur(15px); opacity: 0.3; animation: pulse 3s infinite;
+}
+
+.main-photo {
+    position: relative; width: 200px; height: 200px; border-radius: 50%;
+    border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; z-index: 2;
+}
+.main-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.1); opacity: 0.5; } }
+
+/* SYMBOL DECORATIONS */
+.top-ornament { color: var(--pink-dark); font-size: 1.2rem; text-align: center; margin-bottom: 20px; letter-spacing: 5px; text-shadow: 0 0 5px white; }
+.flower-center-decor { font-size: 2.5rem; animation: float 4s ease-in-out infinite; margin-bottom: 10px; }
+
+.floral-divider, .floral-divider-bottom {
+    display: flex; justify-content: center; gap: 15px; margin: 20px 0; font-size: 1.5rem; color: var(--pink-dark);
+}
+.floral-divider span, .floral-divider-bottom span { text-shadow: 0 2px 10px rgba(240, 98, 146, 0.3); animation: subtleBounce 2s infinite; }
+.floral-divider span:nth-child(2) { animation-delay: 0.2s; }
+.floral-divider span:nth-child(3) { animation-delay: 0.4s; font-size: 2rem; }
+
+@keyframes subtleBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+/* TYPOGRAPHY */
+h1, h2, h3, .label, .card-ornament { font-family: 'Dancing Script', cursive; text-align: center; }
+h1 { font-size: 3.5rem; color: var(--accent); text-shadow: 2px 2px 0px white; }
+
+.animate-text {
+    opacity: 0; transform: scale(0.9) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.active .animate-text { opacity: 1; transform: scale(1) translateY(0); }
+
+/* PHOTO MEMORIES */
+.memories-header { margin-bottom: 110px; }
+.photo-memories h2 { font-size: 3rem; color: #880e4f; }
+.sub-ornament { color: var(--pink-dark); font-size: 1rem; letter-spacing: 10px; }
+
+.fly-container { position: relative; width: 100%; max-width: 450px; height: 350px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+.card { position: absolute; background: white; padding: 8px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.card img { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; }
+
+.center { width: 170px; height: 240px; z-index: 5; border: 3px solid var(--pink-dark); }
+.side { width: 130px; height: 190px; opacity: 0.85; }
+.left { transform: translateX(-85px) rotate(-10deg); }
+.right { transform: translateX(85px) rotate(10deg); }
+
+.fly-container.active .center { transform: translateY(-50px) scale(1.1); }
+.fly-container.active .left { transform: translateX(-150px) translateY(25px) rotate(-20deg); }
+.fly-container.active .right { transform: translateX(150px) translateY(25px) rotate(20deg); }
+
+/* INVITATION CARD */
+.glass-card-invitation {
+    background: var(--glass-white); backdrop-filter: blur(15px); border-radius: 30px;
+    padding: 50px 30px; max-width: 500px; width: 92%; text-align: center; border: 2px solid white; margin: 0 auto; position: relative;
+}
+.card-ornament { font-size: 1.5rem; color: var(--pink-dark); width: 100%; }
+.card-ornament.top { margin-bottom: 15px; }
+.card-ornament.bottom { margin-top: 15px; }
+
+.schedule-box {
+    background: #fff5f8; padding: 25px; border-radius: 20px;
+    margin: 25px auto; display: flex; flex-direction: column; align-items: center;
+    border: 1px dashed var(--pink-dark);
+}
+.row { display: flex; gap: 10px; margin-bottom: 8px; width: 100%; max-width: 260px; font-size: 0.95rem; }
+.label-info { min-width: 90px; font-weight: bold; color: #ad1457; text-align: left; }
+.value-info { text-align: left; }
+
+/* RSVP BOX (POLOS & RAPI) */
+.rsvp-container {
+    background: var(--glass-white); border-radius: 35px; padding: 45px 35px;
+    width: 90%; max-width: 460px; margin: 0 auto; border: 2px solid white; box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+.icon-header-wrapper { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px; }
+.floating-sparkle { animation: sparkle 2s infinite; color: gold; font-size: 1.2rem; }
+
+@keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.2); } }
+
+/* NAMA LENGKAP POLOS */
+input[name="nama"] {
+    background: transparent !important; border: none !important; 
+    border-bottom: 2px solid rgba(240, 98, 146, 0.4) !important; 
+    border-radius: 0 !important; padding-left: 45px !important; box-shadow: none !important; transition: 0.3s;
+}
+input[name="nama"]:focus { border-bottom: 2px solid var(--accent) !important; }
+
+input, select {
+    width: 100%; padding: 15px 15px 15px 45px;
+    border-radius: 15px; border: 1px solid rgba(240, 98, 146, 0.15);
+    background: #fff; outline: none; font-size: 1rem;
+}
+.input-group { position: relative; margin-bottom: 18px; display: flex; align-items: center; }
+.input-icon { position: absolute; left: 15px; font-size: 1.2rem; }
+
+/* BUTTONS */
+.maps-btn, button { 
+    background: linear-gradient(135deg, #f472b6, #db2777); color: white; 
+    padding: 16px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; 
+    border: none; cursor: pointer; transition: 0.4s; display: inline-block; width: 100%; text-align: center;
+    box-shadow: 0 8px 20px rgba(219, 39, 119, 0.2);
+}
+.maps-btn:hover, button:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(219, 39, 119, 0.3); }
+
+/* LAYOUT */
+section { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 100px 20px; position: relative; }
+.section-divider { margin: 40px 0; color: var(--pink-dark); opacity: 0.4; letter-spacing: 5px; font-weight: 300; }
+
+.interactive-card { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.interactive-card:hover { transform: translateY(-10px); }
+
+/* FLOWERS */
+#flower-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
+.flower { position: absolute; animation: fall linear infinite; filter: drop-shadow(0 0 5px white); }
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0); opacity: 0; }
+    5% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+.reveal { opacity: 0; transition: opacity 1.5s ease; }
+.reveal.active { opacity: 1; }
+/* 1. EFEK INTERAKSI FOTO UTAMA */
+.main-photo {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* Saat kursor mendekat atau foto ditekan */
+.main-photo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 45px rgba(240, 98, 146, 0.35);
+    border-color: var(--pink-dark);
+}
+
+.main-photo:active {
+    transform: scale(0.95);
+}
+
+/* 2. STYLING FOOTER CANTIK */
+.footer {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to top, rgba(252, 228, 236, 0.6), transparent);
+    margin-top: 50px;
+}
+
+.footer-ornament {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--accent);
+    max-width: 350px;
+    margin: 0 auto 35px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 0px white;
+}
+
+.footer-bottom {
+    font-size: 0.75rem;
+    color: #880e4f;
+    opacity: 0.7;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.footer-symbols {
+    color: var(--pink-dark);
+    opacity: 0.4;
+    font-size: 0.9rem;
+    letter-spacing: 12px;
+}
+
+/* --- KODE UNTUK MERAPATKAN JARAK (DEKETIN KONTEN) --- */
+
+section {
+    min-height: auto !important; /* Biar tinggi halaman mengikuti isi, tidak dipaksa satu layar penuh */
+    padding: 40px 20px !important; /* Mengurangi jarak atas dan bawah antar bagian */
+}
+
+.memories-header {
+    margin-bottom: 50px !important; /* Deketin tulisan "Growing Up So Fast" ke arah foto */
+}
+
+.section-divider {
+    margin: 15px 0 !important; /* Merapatkan jarak garis pembatas bunga */
+}
+
+.footer {
+    padding: 30px 20px !important; /* Merapatkan footer */
+    margin-top: 20px !important;
+}
+
+.schedule-box {
+    margin: 15px auto !important; /* Merapatkan kotak alamat */
+}
+/* Tombol Musik Melayang */
+.music-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--pink-dark);
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(240, 98, 146, 0.3);
+    transition: 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    background: var(--pink-coast);
+}
+/* Styling Kotak Pesan agar Polos */
+textarea[name="pesan"] {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid rgba(240, 98, 146, 0.4) !important;
+    border-radius: 0 !important;
+    padding-left: 45px !important;
+    box-shadow: none !important;
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+textarea[name="pesan"]:focus {
+    border-bottom: 2px solid var(--accent) !important;
+}

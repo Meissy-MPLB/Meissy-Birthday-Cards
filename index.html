@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Meissy Birthday Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="flower-wrapper"></div>
+    <audio id="bg-music" loop>
+    <source src="backsound.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" class="music-btn">
+    <span id="music-icon">🔇</span>
+</button>
+    <section class="hero reveal">
+        <div class="top-ornament">✧ ❀ ✧ 🌸 ✧ ❀ ✧</div>
+        <div class="hero-box">
+            <div class="main-photo-wrapper">
+                <div class="photo-glow"></div>
+                <div class="main-photo">
+                    <img src="masaskrg1.jpg" alt="Birthday Person">
+                </div>
+            </div>
+            <h1 class="animate-text">Happy Birthday!</h1>
+            <p class="animate-text">You're invited to celebrate this special day.</p>
+            <div class="floral-divider animate-text">
+                <span>❁</span><span>✿</span><span>❀</span><span>✿</span><span>❁</span>
+            </div>
+        </div>
+        <div class="section-divider">──────── ❀ ────────</div>
+    </section>
+
+    <section class="photo-memories reveal">
+        <div class="memories-header">
+            <h2 class="animate-text">Growing Up So Fast</h2>
+            <div class="sub-ornament animate-text">✧ ✦ ✧</div>
+        </div>
+        <div class="fly-container" id="fly-trigger">
+            <div class="card side left"><img src="mskcl1.jpg" alt="Foto 1"></div>
+            <div class="card center">
+                <img src="masakecil1.jpg" alt="Foto Tengah">
+                <div class="label">Little Me</div>
+            </div>
+            <div class="card side right"><img src="mskcl2.jpg" alt="Foto 2"></div>
+        </div>
+        <div class="floral-divider-bottom animate-text">
+            <span>🍃</span><span>🌸</span><span>✨</span><span>🌸</span><span>🍃</span>
+        </div>
+        <p class="tap-hint animate-text">Tap fotonya buat lihat keajaiban!</p>
+        <div class="section-divider">──────── ❀ ────────</div>
+    </section>
+
+    <section class="formal-invitation reveal">
+        <div class="glass-card-invitation interactive-card">
+            <div class="card-ornament top">❁ ❀ ❁</div>
+            <div class="card-header">
+                <p>Kepada: <strong>Seluruh teman-teman aku</strong></p>
+            </div>
+            <div class="card-body">
+                <p class="greeting animate-text">Assalamu alaikum wr. wb.</p>
+                <p class="animate-text">Dengan rahmat dan ridho Allah SWT saya bermaksud mengundang teman-teman semua untuk hadir di rumah dalam acara syukuran pada:</p>
+                
+                <div class="schedule-box animate-text">
+                    <div class="row">
+                        <span class="label-info">🗓️ Hari</span>
+                        <span class="value-info">: Sabtu</span>
+                    </div>
+                    <div class="row">
+                        <span class="label-info">📅 Tanggal</span>
+                        <span class="value-info">: 16 Mei 2026</span>
+                    </div>
+                    <div class="row">
+                        <span class="label-info">⏰ Waktu</span>
+                        <span class="value-info">: 15.00 s/d Selesai</span>
+                    </div>
+                    <div class="row">
+                        <span class="label-info">📍 Tempat</span>
+                        <span class="value-info">: Blok sawo RT 2 RW 3 No.99</span>
+                    </div>
+                </div>
+
+                <p class="closing animate-text">Sungguh suatu kebahagiaan bagi saya apabila teman-teman dapat hadir.</p>
+                <p class="greeting animate-text">Wassalamu alaikum wr. wb.</p>
+
+                <a href="https://maps.app.goo.gl/2Dm7wVau5591PwB5A?g_st=aw" target="_blank" class="maps-btn">Buka Google Maps 📍</a>
+            </div>
+            <div class="card-ornament bottom">❁ ❀ ❁</div>
+        </div>
+        <div class="section-divider">──────── ❀ ────────</div>
+    </section>
+
+    <section class="rsvp-section reveal">
+        <div class="glass-card rsvp-container interactive-card">
+            <div class="form-header">
+                <div class="icon-header-wrapper">
+                    <span class="floating-sparkle">✨</span>
+                    <span class="icon-header">💌</span>
+                    <span class="floating-sparkle">✨</span>
+                </div>
+                <h4>Konfirmasi Kehadiran</h4>
+                <p>Kasih tahu aku ya kalau kamu bisa dateng!</p>
+            </div>
+            
+            <form id="rsvp-form">
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" name="nama" placeholder="Nama Lengkap Kamu" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">🏫</span>
+                    <input type="text" name="kelas" placeholder="Dari Kelas Mana?" required>
+                </div>
+                <div class="input-group">
+    <span class="input-icon">📞</span>
+    <input type="tel" name="telepon" placeholder="Nomor WhatsApp/HP" required>
+</div>
+<div class="input-group">
+    <span class="input-icon">📝</span>
+    <input name="pesan" placeholder="Tulis pesan berkesanmu di sini..." rows="3" required></textarea>
+</div>
+                <div class="input-group">
+                    <span class="input-icon">✨</span>
+                    <select name="kehadiran">
+                        <option value="Hadir">Gue Pasti Dateng!</option>
+                        <option value="Tidak Hadir">Maaf, Nggak Bisa Nih</option>
+                        <option value="Ragu-ragu">Masih Ragu-ragu</option>
+                    </select>
+                </div>
+                <button type="submit" id="btn-kirim">Kirim Konfirmasi 🚀</button>
+            </form>
+            <div id="response-msg"></div>
+        </div>
+    </section>
+<footer class="footer reveal">
+        <div class="footer-ornament">❁ ❀ ❁</div>
+        <p class="footer-text">"Terima kasih telah menjadi bagian dari perjalanan hidupku. Sampai jumpa di hari spesial nanti!"</p>
+        <div class="footer-bottom">
+            <span>Meissy Ananda Setiawan</span>
+        </div>
+        <div class="footer-symbols">✧ ✦ ✧</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
